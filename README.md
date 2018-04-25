@@ -11,21 +11,12 @@ This leverages the [ISY994i](https://wiki.universal-devices.com/index.php?title=
 4. Latest updates (just a good idea in general) [Vive](http://www.lutron.com/en-US/Service-Support/Pages/Technical/SoftwareDownloads/SoftwareDownloads.aspx) [ISY](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series)
 
 #### Testing
-Sucessfully implemeted basic Demand Response Activate and Deactivate with [Lutron Quantum®](http://www.lutron.com/en-US/Products/Pages/WholeBuildingSystems/Quantum/Overview.aspx) and [Lutron Vive](http://www.lutron.com/en-US/Products/Pages/WholeBuildingSystems/Vive/Overview.aspx) systems networked (ethernet) with and [ISY](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series)
-, configured as described.
+Sucessfully implemeted basic Demand Response Activate and Deactivate with [Lutron Quantum®](http://www.lutron.com/en-US/Products/Pages/WholeBuildingSystems/Quantum/Overview.aspx) and [Lutron Vive](http://www.lutron.com/en-US/Products/Pages/WholeBuildingSystems/Vive/Overview.aspx) systems networked (ethernet) with an [ISY994i](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series)
+, configured as described below.
 
 #### Files:
 1. `admin.jnlp` Admin Java program for ISY
 2. `LutronZone_and_DR.zip` Custom Networking Resource Module for ISY
-
-#### Useful Testing Utilties:
-1. [YABE](https://sourceforge.net/projects/yetanotherbacnetexplorer/) - To send the BACnet commands
-2. [Wireshark](https://www.wireshark.org/download.htmlhttps://dannagle.com/packetsender) - To watch the BACnet commands
-    - Using filter `udp.port==47808`
-    - Use YABE to change a Value
-    - Copy hex stream from the resulting packet, you want the bytes starting at "BACnet Virtual Link Control"
-3. [Packet Sender](https://dannagle.com/packetsender) - Take your hex command, send as UDP
-    - Check back in Wireshark and YABE to see if you actually did something
 
 #### ISY Programming
 ##### NOTE: you'll need the Netowrking module installed, and network resources created, this is covered in the next section.  Read the Docs [ISY](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series) 
@@ -97,5 +88,13 @@ Sucessfully implemeted basic Demand Response Activate and Deactivate with [Lutro
  3. Each lighting control Hub will need to have a unique BACnet network number (recommend offsetting by 1).
  4. Hubs do not need to have a System Password set, but it is recommened.
 
+#### Useful Network Testing Utilties:
+1. [YABE](https://sourceforge.net/projects/yetanotherbacnetexplorer/) - To send the BACnet commands
+2. [Wireshark](https://www.wireshark.org/download.htmlhttps://dannagle.com/packetsender) - To watch the BACnet commands
+    - Using filter `udp.port==47808`
+    - Use YABE to change a Value
+    - Copy hex stream from the resulting packet, you want the bytes starting at "BACnet Virtual Link Control"
+3. [Packet Sender](https://dannagle.com/packetsender) - Take your hex command, send as UDP
+    - Check back in Wireshark and YABE to see if you actually did something
 
 
