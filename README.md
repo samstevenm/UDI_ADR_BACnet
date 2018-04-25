@@ -4,8 +4,11 @@ This leverages the [ISY994i](https://wiki.universal-devices.com/index.php?title=
 
 #### Requirements: 
 1. An ISY994 device with the Networking Module Installed
+    - I used the ISY994i
+    - Since I used the ISY994i I needed the PowerLinc Modem #2413S
 2. Networked (Ethernet) Lighting Control Hubs (We're using Vive Hubs)
-3. Latest updates (just a good idea in general) [Vive](http://www.lutron.com/en-US/Service-Support/Pages/Technical/SoftwareDownloads/SoftwareDownloads.aspx) [ISY](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series)
+3. All devices networked together (ethernet)
+4. Latest updates (just a good idea in general) [Vive](http://www.lutron.com/en-US/Service-Support/Pages/Technical/SoftwareDownloads/SoftwareDownloads.aspx) [ISY](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series)
 
 #### Testing
 Sucessfully implemeted basic Demand Response Activate and Deactivate with [Lutron Quantum®](http://www.lutron.com/en-US/Products/Pages/WholeBuildingSystems/Quantum/Overview.aspx) and [Lutron Vive](http://www.lutron.com/en-US/Products/Pages/WholeBuildingSystems/Vive/Overview.aspx) systems networked (ethernet) with and [ISY](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series)
@@ -25,10 +28,8 @@ Sucessfully implemeted basic Demand Response Activate and Deactivate with [Lutro
     - Check back in Wireshark and YABE to see if you actually did something
 
 #### ISY Programming
-
 ##### NOTE: you'll need the Netowrking module installed, and network resources created, this is covered in the next section.  Read the Docs [ISY](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series) 
 
-##### Setting up your ISY to communicate with SCE: https://wiki.universal-devices.com/index.php?title=Main_Page#OpenADR 
   1. Create programs (under programs tab) for the following conditions: 
           - DR ON (or Active)
       ```   
@@ -44,7 +45,7 @@ Sucessfully implemeted basic Demand Response Activate and Deactivate with [Lutro
            If
                 Module OpenADR Status is Inactive 
                 OR Module OpenADR Status is Pending
-              Then
+           Then
                 Module Network Resource DR Off (Hub 1)
                 Module Network Resource DR Off (Hub 2)
       ```
@@ -86,7 +87,10 @@ Sucessfully implemeted basic Demand Response Activate and Deactivate with [Lutro
 
 2. Save and test these commands.  Verify that the Hub GUI changes, and Demand Reponse activates. 
 
-#### Lighting Hub Programming [Vive](http://www.lutron.com/TechnicalDocumentLibrary/041571_Web.pdf)
+#### Setting up your ISY to communicate with SCE: https://wiki.universal-devices.com/index.php?title=Main_Page#OpenADR 
+##### NOTE: you'll need server settings and user info from SCE
+
+#### Lighting Hub Setup [Vive](http://www.lutron.com/TechnicalDocumentLibrary/041571_Web.pdf)
 
  1. Each lighting control Hub will need to have a unique, prefferably static IP address.
  2. Each lighting control Hub will need to have a unique BACnet instance number (recommend offsetting by 100).
