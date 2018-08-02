@@ -1,6 +1,6 @@
 # UDI_ADR_BACnet
 Allow ISY994 to write to BACnet devices.  Combines ISY994 and Lighting Control system to send UDP DR signal to BACnet devices.
-This leverages the [ISY994i](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series) and the [UDI Network Module](https://wiki.universal-devices.com/index.php?title=Main_Page#Networking) and allows a lighting system to believe receive a BACnet write command.
+This leverages the [ISY994i](https://wiki.universal-devices.com/index.php?title=Main_Page#ISY994i_Series) and the [UDI Network Module](https://wiki.universal-devices.com/index.php?title=Main_Page#Networking) and allows a lighting system to believe it received a BACnet write command.
 
 #### Requirements: 
 1. An ISY994 device with the Networking Module Installed
